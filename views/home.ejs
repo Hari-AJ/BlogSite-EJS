@@ -1,0 +1,17 @@
+<%- include("partials/header") %>
+<h1>Home</h1>
+<P><%= para1 %></P>
+<% posts.forEach(function(element){ %>
+<h2> <%= element.t1 %> </h2>
+<% let para=element.t2 %>
+<% if(element.t2.length>100) { %>
+<% para=element.t2.slice(0,100)+"..." %>
+<% } %>
+<% let url="/posts/"+element.t1 %>
+<p><%=para%><a href=<%= url %> >Read More</a></p>
+<% console.log("/posts/"+element.t1); %>
+
+    
+<% }); %>
+
+<%- include("partials/footer") %>
